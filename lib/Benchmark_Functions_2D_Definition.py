@@ -1,6 +1,6 @@
 import numpy as np
 
-import Benchmark_Functions_2D as functions
+import lib.Benchmark_Functions_2D as functions
 
 FUNCTION_POINTER=0
 FUNCTION_XRANGE=1

@@ -1,4 +1,4 @@
-import CORNN
+import lib.CORNN as CORNN
 import numpy as np
 if __name__ == "__main__":
   

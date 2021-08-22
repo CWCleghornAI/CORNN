@@ -1,6 +1,6 @@
-import Benchmark_Functions_2D_Definition as Fd
-import NN_Benchmarking # this is just for reflection
-from NN_Benchmarking import *
+import lib.Benchmark_Functions_2D_Definition as Fd
+import lib.NN_Benchmarking as NN_Benchmarking# this is just for reflection
+from lib.NN_Benchmarking import *
 import inspect
 import csv
 import numpy as np
@@ -8,7 +8,7 @@ import pandas as pd
 import torch
 
 
-DATA_PATH="data_sets/"
+DATA_PATH="lib/data_sets/"
 def get_function_data_csv(_file_dir):
     file = pd.read_csv(_file_dir)
     result = file.values
