@@ -23,7 +23,7 @@ training_data, test_data= CORNN.get_scaled_function_data(function_dictionary["Ac
 # The first element of training_data is an PyTorch tensor of data patterns
 # The second element of training_data is a PyTorch tensor of the corresponding labels
 # The same is true for test_data
-#
+
 
 neural_network_dictionary=CORNN.get_NN_models()
 # Returns a dictionary of all neural network architecture from CORNN
