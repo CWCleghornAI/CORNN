@@ -26,7 +26,6 @@ training_data, test_data= CORNN.get_scaled_function_data(function_dictionary["Ac
 # The second element of training_data is a PyTorch tensor of the corresponding labels
 # The same is true for test_data
 
-
 neural_network_dictionary=CORNN.get_NN_models()
 # Returns a dictionary of all neural network architecture from CORNN
 # The key is the class name, the value is the NN class built on PyTorch. 
@@ -38,12 +37,10 @@ neural_network_architecture=neural_network_dictionary["Net_5_relu_layers"]() # t
 # Selects the 3 hiddern layer NN model that uses ReLU activation function within
 # the Hiddern layers. 
 
-
 # The combination of training_data, test_data, and the 
 # selected neural network architecture makes a problem instance of CORNN
 CORNN_benchmark_instance=CORNN.NN_Benchmark(training_data,test_data,neural_network_architecture)
 instance_dimension= CORNN_benchmark_instance.get_weight_count()
-
 
 example_candidate_solution=np.random.rand(instance_dimension)
 
