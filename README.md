@@ -15,7 +15,7 @@ function_dictionary=CORNN.get_benchmark_functions()
 # Returns a dictionary of all the regression function functions within CORNN
 # The key is the function name, the value is a 3 element tuple:
 # Containing the raw objective function (for example the Ackley function)
-# The x_1 variable's domain and the x_2 variable's domain
+# The x variable's domain and the y variable's domain
 
 print([*function_dictionary.keys()])
 # list all the available objective functions.
