@@ -57,3 +57,4 @@ This code is also present in Demo.py
 ## Underlying Functions
 The CORNN suite provides data sets for the following functions:
 ...
+![Bird 3D plot](function_plots/Bird.gif)
