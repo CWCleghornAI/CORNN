@@ -82,7 +82,7 @@ torch==1.9.0
 ```
 
 ## Installation
-You can simply download the lib folder an use as indicated in 'demo.py' file or if you wish to install CORRN as a package you can enter the below commands:
+You can simply download the lib folder and use as indicated in the 'Demo.py' file or if you wish to install CORRN as a package you can enter the below commands:
 
 ```
 git clone https:///github.com/CWCleghornAI/CORNN
@@ -90,7 +90,7 @@ cd CORNN
 python3 setup.py install
 ```
 ## Licensing
-GNU General Public License v3.0 details can be found [here](LICENSE.txt) 
+The CORNN suite is provided under GNU General Public License v3.0: details can be found [here](LICENSE.txt) 
 
 ## Improving CORRN
 If you encounter any bugs or see possible improvements, please open an issue or feel free to make a pull request.
