@@ -18,7 +18,7 @@ The goal of each problem instance is to try and improve the model fit by optimiz
 - All 54 regression task generating functions have also been provided
 
 ## Using the CORNN benchmark suite
-The CORRN benchmark suite is designed using Python 3 and relies on PyTorch for highly efficient candidate solution evaluation. In order to construct one of the 324 problem instances an underlying regression task and a model architecture must be selected from the library. Once this pair has been selected the library will construct a problem instance object with a callable function from which the user can simply pass a candidate solution to for evaluation.
+The CORNN benchmark suite is designed using Python 3 and relies on PyTorch for highly efficient candidate solution evaluation. In order to construct one of the 324 problem instances an underlying regression task and a model architecture must be selected from the library. Once this pair has been selected the library will construct a problem instance object with a callable function from which the user can simply pass a candidate solution to for evaluation.
 
 The following code snippet is also present in 'Demo.py', and should serve as a straight forward guide of how to use the benchmark suite. 
 ```py
@@ -82,7 +82,7 @@ torch==1.9.0
 ```
 
 ## Installation
-You can simply download the lib folder and use as indicated in the 'Demo.py' file or if you wish to install CORRN as a package you can enter the below commands:
+You can simply download the lib folder and use as indicated in the 'Demo.py' file or if you wish to install CORNN as a package you can enter the below commands:
 
 ```
 git clone https:///github.com/CWCleghornAI/CORNN
@@ -92,5 +92,5 @@ python3 setup.py install
 ## Licensing
 The CORNN suite is provided under GNU General Public License v3.0: details can be found [here](LICENSE.txt) 
 
-## Improving CORRN
+## Improving CORNN
 If you encounter any bugs or see possible improvements, please open an issue or feel free to make a pull request.
