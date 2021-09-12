@@ -66,7 +66,7 @@ print("Testing set loss:",testing_loss)
 
 
 ## Underlying Functions
-The CORNN suite provides data sets (both test and train) for 54 functions, as detailed in [arXiv ref].To provide a taste, below is the Alpine N.1, Bird, Egg Holder, and Himmelblau plotted in 3D.
+The CORNN suite provides data sets (both test and train) for 54 functions, as detailed in [arXiv ref]. To provide a sense of the regression tasks for are plotted in 3D below: Alpine N.1, Bird, Egg Holder, and Himmelblau.
 
 ![Alpine N.1 3D plot](function_plots/Alpine_N.1_trimmed.gif)
 ![Bird 3D plot](function_plots/Bird_trimmed.gif)
@@ -74,7 +74,7 @@ The CORNN suite provides data sets (both test and train) for 54 functions, as de
 ![Himmelblau 3D plot](function_plots/Himmelblau_trimmed.gif)
 
 ## Dependencies
-The benchmark suite makes use of numpy, panda, and [PyTorch](https://pytorch.org/). The minimum version numbers are stored in requirements.txt file and are:
+The benchmark suite makes use of numpy, panda, and [PyTorch](https://pytorch.org/). The minimum version numbers are stored in [requirements.txt](requirements.txt) file and are:
 ```
 numpy==1.20.1
 pandas==1.2.3
