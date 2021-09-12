@@ -1,7 +1,6 @@
 from numpy import cos, sin, pi, exp, sqrt, abs
 
 
-
 def ackley_func(x, y):
     a = 20
     b = 0.2

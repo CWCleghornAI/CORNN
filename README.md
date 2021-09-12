@@ -89,3 +89,8 @@ git clone https:///github.com/CWCleghornAI/CORNN
 cd CORNN
 python3 setup.py install
 ```
+## Licensing
+GNU General Public License v3.0 details can be found [here](LICENSE.txt) 
+
+## Improving CORRN
+If you encounter any bugs or see possible improvements, please open an issue or feel free to make a pull request.

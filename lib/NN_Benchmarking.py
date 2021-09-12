@@ -1,19 +1,27 @@
 import torch
-#import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import numpy as np
 
+# If you wish to utile a different NN architecture, then all that
+# is required is you implement a custom version inline with the 
+# model classes below.
+# 
+# The model class have been intentionally been left in a verbose 
+# form to facilitate ease of interpretation for those not
+# necessarily familiar with PyTorch. 
+
+
 class Net_5_relu_layers(nn.Module):
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(2, 10)     #input->H1
-        self.fc2 = nn.Linear(10, 10)    #H1->H2
-        self.fc3 = nn.Linear(10, 10)    #H2->H3
-        self.fc4 = nn.Linear(10, 10)    #H3->H4
-        self.fc5 = nn.Linear(10, 10)    #H4->H5
-        self.fc6 = nn.Linear(10, 1)     #H5->output
+        self.fc1 = nn.Linear(2, 10)     # input->H1
+        self.fc2 = nn.Linear(10, 10)    # H1->H2
+        self.fc3 = nn.Linear(10, 10)    # H2->H3
+        self.fc4 = nn.Linear(10, 10)    # H3->H4
+        self.fc5 = nn.Linear(10, 10)    # H4->H5
+        self.fc6 = nn.Linear(10, 1)     # H5->output
 
     def forward(self, x):
         x = self.fc1(x)
@@ -32,12 +40,12 @@ class Net_5_relu_layers(nn.Module):
 class Net_5_tanh_layers(nn.Module):
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(2, 10)     #input->H1
-        self.fc2 = nn.Linear(10, 10)    #H1->H2
-        self.fc3 = nn.Linear(10, 10)    #H2->H3
-        self.fc4 = nn.Linear(10, 10)    #H3->H4
-        self.fc5 = nn.Linear(10, 10)    #H4->H5
-        self.fc6 = nn.Linear(10, 1)     #H5->output
+        self.fc1 = nn.Linear(2, 10)     # input->H1
+        self.fc2 = nn.Linear(10, 10)    # H1->H2
+        self.fc3 = nn.Linear(10, 10)    # H2->H3
+        self.fc4 = nn.Linear(10, 10)    # H3->H4
+        self.fc5 = nn.Linear(10, 10)    # H4->H5
+        self.fc6 = nn.Linear(10, 1)     # H5->output
 
     def forward(self, x):
         x = self.fc1(x)
@@ -56,10 +64,10 @@ class Net_5_tanh_layers(nn.Module):
 class Net_3_relu_layers(nn.Module):
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(2, 10)     #input->H1
-        self.fc2 = nn.Linear(10, 10)    #H1->H2
-        self.fc3 = nn.Linear(10, 10)    #H2->H3
-        self.fc4 = nn.Linear(10, 1)    #H3->output
+        self.fc1 = nn.Linear(2, 10)     # input->H1
+        self.fc2 = nn.Linear(10, 10)    # H1->H2
+        self.fc3 = nn.Linear(10, 10)    # H2->H3
+        self.fc4 = nn.Linear(10, 1)     # H3->output
 
     def forward(self, x):
         x = self.fc1(x)
@@ -74,10 +82,10 @@ class Net_3_relu_layers(nn.Module):
 class Net_3_tanh_layers(nn.Module):
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(2, 10)     #input->H1
-        self.fc2 = nn.Linear(10, 10)    #H1->H2
-        self.fc3 = nn.Linear(10, 10)    #H2->H3
-        self.fc4 = nn.Linear(10, 1)    #H3->output
+        self.fc1 = nn.Linear(2, 10)     # input->H1
+        self.fc2 = nn.Linear(10, 10)    # H1->H2
+        self.fc3 = nn.Linear(10, 10)    # H2->H3
+        self.fc4 = nn.Linear(10, 1)     # H3->output
 
     def forward(self, x):
         x = self.fc1(x)
@@ -93,8 +101,8 @@ class Net_3_tanh_layers(nn.Module):
 class Net_1_relu_layer(nn.Module):
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(2, 10)     #input->H1
-        self.fc2 = nn.Linear(10, 1)     #H1->output
+        self.fc1 = nn.Linear(2, 10)     # input->H1
+        self.fc2 = nn.Linear(10, 1)     # H1->output
     def forward(self, x):
         x = self.fc1(x)
         x = F.relu(x)
@@ -104,8 +112,8 @@ class Net_1_relu_layer(nn.Module):
 class Net_1_tanh_layer(nn.Module):
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(2, 10)     #input->H1
-        self.fc2 = nn.Linear(10, 1)     #H1->output
+        self.fc1 = nn.Linear(2, 10)     # input->H1
+        self.fc2 = nn.Linear(10, 1)     # H1->output
     def forward(self, x):
         x = self.fc1(x)
         x = torch.tanh(x)
@@ -152,7 +160,7 @@ class NN_Benchmark:
         with torch.no_grad():
             self.network.eval()
             patterns, targets=self.training_set
-            #use a single forward pass for all the data
+            #uses a single forward pass for all the data
             predictions=self.network(patterns.view(-1,2))
             loss=self.loss_function(predictions,targets)
             return loss
@@ -160,7 +168,7 @@ class NN_Benchmark:
         with torch.no_grad():
             self.network.eval()
             patterns, targets=self.test_set
-            #use a single forward pass for all the data
+            #uses a single forward pass for all the data
             predictions=self.network(patterns.view(-1,2))
             loss=self.loss_function(predictions,targets)
             return loss
@@ -180,6 +188,8 @@ class NN_Benchmark:
         size=flatten_state_dict(weights).size()[0]
         return size
 
+    # full_grad_epoch member function here left as a convenience to a user
+    # as it can be used as an Adam based baseline
     def full_grad_epoch(self):
         self.network.train()
         self.network.zero_grad()
@@ -196,7 +206,6 @@ def flatten_state_dict(_pytorch_state_dict):
     long_tensor=torch.empty(0)
     for key,tensor in _pytorch_state_dict.items():
         long_tensor=torch.cat((long_tensor, tensor.flatten()), 0)
-    #print(long_tensor)
     return long_tensor
 
 
