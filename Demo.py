@@ -3,10 +3,10 @@ import numpy as np
 if __name__ == "__main__":
   
     function_dictionary=CORNN.get_benchmark_functions()
-    # Returns a dictionary of all the regression function functions within CORNN
+    # Returns a dictionary of all the regression functions within CORNN
     # The key is the function name, the value is a 3 element tuple:
-    # Containing the raw objective function (for example the Ackley function)
-    # The X variable's domain and the Y variable's domain
+    # containing the raw objective function (for example the Ackley function) and
+    # the x variable's domain and the y variable's domain
 
     print([*function_dictionary.keys()])
     # list all the available objective functions.
@@ -16,7 +16,6 @@ if __name__ == "__main__":
     # The first element of training_data is an PyTorch tensor of data patterns
     # The second element of training_data is a PyTorch tensor of the corresponding labels
     # The same is true for test_data
-    #
 
     neural_network_dictionary=CORNN.get_NN_models()
     # Returns a dictionary of all neural network architecture from CORNN

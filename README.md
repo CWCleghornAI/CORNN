@@ -13,20 +13,20 @@ The goal of each problem instance is to try and improve the model fit by optimiz
 - Windows, Linux, and Mac OS supported
 - Rapid candidate solution evaluation due to the PyTorch backend
 - 324 unique problem instances 
-- Simple use interface, with both the neural network computation and dataset processing abstracted away
+- Simple to use interface, with both the neural network computation and dataset processing abstracted away
 - Additional neural network architecture and can be easily be added
-- All 54 regression task generating functions have been provided
+- All 54 regression task generating functions have also been provided
 
 ## Using the CORNN benchmark suite
-The CORRN benchmark suite is designed using Python 3 and relies on PyTorch for highly efficient candidate solution evaluation. In order to construct one of the $324$ problem instances an underlying regression task and a model architecture must be selected from the library. Once this pair has been selected the library will construct a problem instance object with a callable function from which the user can simply pass a candidate solution to for evaluation \footnote{This evaluation can be performed on either the training set, during optimization, or on the test set after optimization has ended}. What this means to a user of CORRN is that they do not have to concern themselves with any data processing or the underlying neural network level computation. The complexity of the problem instances are abstracted away to the point where a user of CORNN can just work with a objective function after setup.
+The CORRN benchmark suite is designed using Python 3 and relies on PyTorch for highly efficient candidate solution evaluation. In order to construct one of the 324 problem instances an underlying regression task and a model architecture must be selected from the library. Once this pair has been selected the library will construct a problem instance object with a callable function from which the user can simply pass a candidate solution to for evaluation.
 
 The following code snippet is also present in 'Demo.py', and should serve as a straight forward guide of how to use the benchmark suite. 
 ```py
 function_dictionary=CORNN.get_benchmark_functions()
-# Returns a dictionary of all the regression function functions within CORNN
+# Returns a dictionary of all the regression functions within CORNN
 # The key is the function name, the value is a 3 element tuple:
-# Containing the raw objective function (for example the Ackley function)
-# The x variable's domain and the y variable's domain
+# containing the raw objective function (for example the Ackley function) and
+# the x variable's domain and the y variable's domain
 
 print([*function_dictionary.keys()])
 # list all the available objective functions.
