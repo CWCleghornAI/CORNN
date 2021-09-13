@@ -28,17 +28,17 @@ def get_scaled_function_data(_function):
     training_data_file=DATA_PATH+function_name+"_train_set.csv"  
     testing_data_file=DATA_PATH+function_name+"_test_set.csv"
 
-    #Process training data and testing data
+    # Process training data and testing data
     
     train_data=get_function_data_csv(training_data_file)
-    #scale all input within [-1,1] based on known function domain
+    # Scale all input within [-1,1] based on known function domain
     x_s=train_data[:,0]
     x_s=2*(x_s-x_ranges[0])/(x_ranges[1]-x_ranges[0])-1
     y_s=train_data[:,1]
     y_s=2*(y_s-y_ranges[0])/(y_ranges[1]-y_ranges[0])-1
     train_patterns=np.array(list(zip(x_s,y_s)))
 
-    #scale all outputs within [-1,1] using min and max values from training set
+    # Scale all outputs within [-1,1] using min and max values from training set
     train_labels=train_data[:,[2]]
     max_label=np.amax(train_labels)
     min_label=np.amin(train_labels)
@@ -46,17 +46,17 @@ def get_scaled_function_data(_function):
 
 
     test_data=get_function_data_csv(testing_data_file)
-    #scale all input within [-1,1] based on known function domain
+    # Scale all input within [-1,1] based on known function domain
     x_s=test_data[:,0]
     x_s=2*(x_s-x_ranges[0])/(x_ranges[1]-x_ranges[0])-1
     y_s=test_data[:,1]
     y_s=2*(y_s-y_ranges[0])/(y_ranges[1]-y_ranges[0])-1
     test_patterns=np.array(list(zip(x_s,y_s)))
-    #scale all outputs within [-1,1] using min and max values from training set not test set.
+    # Scale all outputs within [-1,1] using min and max values from training set not test set.
     test_labels=test_data[:,[2]]
     test_labels=2*(test_labels-min_label)/(max_label-min_label)-1
 
-    #Convert to PyTorch Tensors
+    # Convert to PyTorch Tensors
     train_patterns_tensor=torch.from_numpy(train_patterns.astype(np.float32))
     train_labels_tensor=torch.from_numpy(train_labels.astype(np.float32))
     test_patterns_tensor=torch.from_numpy(test_patterns.astype(np.float32))

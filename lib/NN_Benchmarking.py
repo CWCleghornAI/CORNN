@@ -5,7 +5,7 @@ import torch.optim as optim
 import numpy as np
 
 # If you wish to utile a different NN architecture, then all that
-# is required is you implement a custom version inline with the 
+# is required is you implement a custom version in line with the 
 # model classes below.
 # 
 # The model class have been intentionally been left in a verbose 
