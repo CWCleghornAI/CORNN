@@ -66,7 +66,7 @@ print("Testing set loss:",testing_loss)
 
 
 ## Underlying Functions
-The CORNN suite provides data sets (both test and train) for 54 functions, as detailed in [arXiv](http://arxiv.org/abs/2109.05606). To provide a sense of the regression tasks for are plotted in 3D below: Alpine N.1, Bird, Egg Holder, and Himmelblau.
+The CORNN suite provides data sets (both test and train) for 54 functions, as detailed in [[arXiv]](http://arxiv.org/abs/2109.05606). To provide a sense of the regression tasks for are plotted in 3D below: Alpine N.1, Bird, Egg Holder, and Himmelblau.
 
 ![Alpine N.1 3D plot](function_plots/Alpine_N.1_trimmed.gif)
 ![Bird 3D plot](function_plots/Bird_trimmed.gif)
