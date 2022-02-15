@@ -66,7 +66,7 @@ print("Testing set loss:",testing_loss)
 ## Using a Custom Neural Network or Dataset
 While the primary CORRN bechmark suit problem instances are pre-built as stated in the [arXiv](http://arxiv.org/abs/2109.05606), it is possible to use a custom neural architecture or dataset. 
 
-Using a custom neural architecture can be achieved by passing a specialzaition of the torch.nn.Module PyTorch class. For example, the line
+Using a custom neural architecture can be achieved by passing a specialization of the torch.nn.Module PyTorch class. For example, the line
 ```
 neural_network_architecture=neural_network_dictionary["Net_5_relu_layers"]()
 ```
