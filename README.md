@@ -66,7 +66,7 @@ print("Testing set loss:",testing_loss)
 ## Using a Custom Neural Network or Dataset
 While the primary CORRN bechmark suit problem instances are pre-built as stated in the [arXiv](http://arxiv.org/abs/2109.05606), it is possible to use a custom neural architecture or dataset. 
 
-Using a custom neural architecture can be achieved by passing a specialization of the torch.nn.Module PyTorch class. For example, the line
+Using a custom neural architecture can be achieved by passing a specialization of the torch.nn.Module PyTorch class. For example, the line from the previous demo
 ```
 neural_network_architecture=neural_network_dictionary["Net_5_relu_layers"]()
 ```
@@ -95,11 +95,11 @@ can be replaced with
 ```
 where *Net_Custom* could be any creation you choose. 
 
-In order to use a custom data set all that woudl be required to genarate two PyTorch tensors like in the demo code
+In order to use a custom data set all that is required to genarate two PyTorch tensors inline with in the demo code line
 ```
 training_data, test_data= CORNN.get_scaled_function_data(function_dictionary["Ackley"])
 ```
-where the first element of *training_data* is an PyTorch tensor of data patterns and the second element of *training_data* is a PyTorch tensor of the corresponding labels. The same must hold true for *test_data* 
+where the first element of *training_data* is an PyTorch tensor of data patterns and the second element of *training_data* is a PyTorch tensor of the corresponding labels. The same must hold true for *test_data*.  If your dataset has data patterns or labels of a different dimensionality than what is used in the base CORNN suit datasets, an appropriate custom neural architecture will be required.
 
 
 
