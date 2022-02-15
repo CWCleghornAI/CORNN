@@ -63,6 +63,38 @@ print("Training set loss:",training_loss)
 testing_loss=CORNN_benchmark_instance.testing_set_evaluation(example_candidate_solution)
 print("Testing set loss:",testing_loss)
 ```
+## Using a Custom Neural Network or Dataset
+While the primary CORRN bechmark suit problem instances are pre-built as stated in the [arXiv](http://arxiv.org/abs/2109.05606), it is possible to use a custom neural architecture or dataset. 
+
+Using a custom neural architecture can be achieved by passing a specialzaition of the torch.nn.Module PyTorch class. For example, the line
+```
+neural_network_architecture=neural_network_dictionary["Net_5_relu_layers"]()
+```
+can be replaced with
+```
+    import torch.nn as nn
+    import torch.nn.functional as F 
+    class Net_Custom(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.fc1 = nn.Linear(2, 10)     # input->H1
+            self.fc2 = nn.Linear(10, 50)    # H1->H2
+            self.fc3 = nn.Linear(50, 10)    # H2->H3
+            self.fc4 = nn.Linear(10, 1)     # H3->output
+
+        def forward(self, x):
+            x = self.fc1(x)
+            x = F.relu(x)
+            x = self.fc2(x)
+            x = F.relu(x)
+            x = self.fc3(x)
+            x = F.relu(x)
+            x = self.fc4(x)
+            return x
+    neural_network_architecture=Net_Custom()
+```
+where *Net_Custom* could be any creation you choose. 
+
 
 
 ## Underlying Functions

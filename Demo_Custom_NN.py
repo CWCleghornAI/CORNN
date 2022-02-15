@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # This example is the same as in Demo.py but with an inline custom architecture.
     # This customization is not needed to use the proposed benchmark suit,
     # but has been included if you wish to explore ideas
-    import torch
+
     import torch.nn as nn
     import torch.nn.functional as F 
     class Net_Custom(nn.Module):
@@ -42,7 +42,7 @@ if __name__ == "__main__":
             x = self.fc1(x)
             x = F.relu(x)
             x = self.fc2(x)
-            x = torch.tanh(x)
+            x = F.relu(x)
             x = self.fc3(x)
             x = F.relu(x)
             x = self.fc4(x)
