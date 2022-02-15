@@ -95,6 +95,12 @@ can be replaced with
 ```
 where *Net_Custom* could be any creation you choose. 
 
+In order to use a custom data set all that woudl be required to genarate two PyTorch tensors like in the demo code
+```
+training_data, test_data= CORNN.get_scaled_function_data(function_dictionary["Ackley"])
+```
+where the first element of *training_data* is an PyTorch tensor of data patterns and the second element of *training_data* is a PyTorch tensor of the corresponding labels. The same must hold true for *test_data* 
+
 
 
 ## Underlying Functions
